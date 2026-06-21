@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial';
+    font-family: Arial;
 }
 
 body {
@@ -19,9 +19,9 @@ body {
 }
 
 .logo {
-    font-size: 22px;
     color: #00c3ff;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .nav a {
@@ -38,186 +38,106 @@ body {
 .hero {
     display: flex;
     justify-content: space-between;
-    padding: 80px 50px;
     align-items: center;
+    padding: 90px 50px;
 }
 
-.hero-left h1 {
+/* TEXT */
+.hero-text h1 {
     font-size: 50px;
     color: #00c3ff;
 }
 
-.hero-left h3 {
-    margin: 10px 0;
-    color: #aaa;
+.hero-text h2 {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 22px;
+    min-height: 30px;
 }
 
-.hero-left p {
+.hero-text p {
+    margin: 15px 0;
     max-width: 400px;
-    margin-bottom: 20px;
     color: #ccc;
 }
 
-.hero-left button {
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
     background: #00c3ff;
-    border: none;
-    padding: 12px 20px;
     color: black;
-    font-weight: bold;
+    text-decoration: none;
     border-radius: 30px;
-    cursor: pointer;
+    font-weight: bold;
 }
 
-/* PROFILE CIRCLE */
-.profile-circle {
-    width: 250px;
-    height: 250px;
+/* IMAGE FRAME */
+.hero-image {
+    position: relative;
+}
+
+/* floating animation */
+.glow-frame {
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
-    background: #00c3ff;
+    padding: 5px;
+    background: radial-gradient(circle, #00c3ff, transparent);
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 0 25px #00c3ff;
 }
 
-/* FEATURES */
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.feature-card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 12px;
-    width: 200px;
-    text-align: center;
-    border: 1px solid #222;
+/* FLOAT */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
-/* ABOUT */
-.about {
+/* SECTIONS */
+.section {
     padding: 60px 50px;
 }
 
-.about h2 {
-    color: #00c3ff;
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.about h1 {
-    margin: 10px 0 30px;
-}
-
-.about-grid {
-    display: flex;
-    gap: 40px;
-}
-
-.img-box {
-    width: 200px;
-    height: 200px;
-    background: #222;
-}
-
-.badge {
-    margin-top: 10px;
-    background: #00c3ff;
-    color: black;
-    padding: 5px;
-    text-align: center;
-}
-
-/* INFO */
-.info p {
-    margin: 5px 0;
-}
-
-/* BUTTON */
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #00c3ff;
-    border: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 20px;
-}
-
-/* COUNTERS */
-.counters {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    background: rgba(255,255,255,0.03);
-}
-
-.counter {
-    background: rgba(0,195,255,0.1);
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.05);
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #00c3ff;
+    border-radius: 12px;
+    border: 1px solid rgba(0,195,255,0.2);
+    transition: 0.3s;
 }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-    padding: 60px;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px #00c3ff;
 }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
     .hero {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .counters {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        gap: 40px;
     }
 
     .nav {
         flex-direction: column;
         gap: 10px;
     }
-
-    .nav a {
-        margin: 5px;
-    }
-}
-/* smooth fade in */
-section, .hero, .features, .about, .counters {
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* hover glow */
-button:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-    box-shadow: 0 0 15px #00c3ff;
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    transition: 0.3s;
 }
