@@ -2,133 +2,222 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial';
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
-}
-
-/* Navigation */
-nav {
-    background: #111;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
+    background: #0b0b1a;
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    color: #00c3ff;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #cccccc;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+.nav a {
     color: white;
-    text-align: center;
-    padding: 80px 20px;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+.nav a:hover {
+    color: #00c3ff;
 }
 
-header p {
-    margin-bottom: 20px;
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 50px;
+    align-items: center;
 }
 
-/* Button */
-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
+.hero-left h1 {
+    font-size: 50px;
+    color: #00c3ff;
 }
 
-button:hover {
-    opacity: 0.9;
-}
-
-/* Sections */
-section {
-    background: white;
-    max-width: 900px;
-    margin: 25px auto;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-section h2 {
-    margin-bottom: 15px;
-}
-
-/* Skills */
-ul {
-    list-style: none;
-}
-
-ul li {
-    background: #eef1ff;
+.hero-left h3 {
     margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
+    color: #aaa;
 }
 
-/* Projects */
-.project-card {
-    background: #eef1ff;
-    padding: 15px;
+.hero-left p {
+    max-width: 400px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.hero-left button {
+    background: #00c3ff;
+    border: none;
+    padding: 12px 20px;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* PROFILE CIRCLE */
+.profile-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #00c3ff;
+}
+
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #222;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 50px;
+}
+
+.about h2 {
+    color: #00c3ff;
+}
+
+.about h1 {
+    margin: 10px 0 30px;
+}
+
+.about-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.img-box {
+    width: 200px;
+    height: 200px;
+    background: #222;
+}
+
+.badge {
+    margin-top: 10px;
+    background: #00c3ff;
+    color: black;
+    padding: 5px;
+    text-align: center;
+}
+
+/* INFO */
+.info p {
+    margin: 5px 0;
+}
+
+/* BUTTON */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00c3ff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* COUNTERS */
+.counters {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background: rgba(255,255,255,0.03);
+}
+
+.counter {
+    background: rgba(0,195,255,0.1);
+    padding: 20px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    border: 1px solid #00c3ff;
 }
 
-.project-card h3 {
-    margin-bottom: 8px;
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 60px;
 }
-
-/* Hover */
-section:hover {
-    transform: translateY(-2px);
-    transition: 0.2s ease;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-    nav a {
-        display: block;
-        margin: 10px 0;
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
     }
 
-    header h1 {
-        font-size: 32px;
+    .features {
+        flex-direction: column;
+        align-items: center;
     }
 
-    section {
-        margin: 15px;
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .counters {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav a {
+        margin: 5px;
     }
 }
-@media (max-width: 7688x) {
-    nav a {
-        display: block;
-        margin: 10px 0;
+/* smooth fade in */
+section, .hero, .features, .about, .counters {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    section {
-        margin: 10px;
-        padding: 16px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    header h1 {
-        font-size: 28px;
-    }
+}
+
+/* hover glow */
+button:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow: 0 0 15px #00c3ff;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    transition: 0.3s;
 }
